@@ -22,17 +22,43 @@ $(document).ready(function() {
       var p2hand = response.player_cards[2];
       var winner = response.winners
       var game = new Game(flop, turn, river, p1hand, p2hand, winner);
-      console.log(game);
-      $('#player1').text("PLAYER 1: " + game.p1hand.join(' '))
-      $('#player2').text("PLAYER 2: " + game.p2hand.join(' '))
+      console.log(game.p1hand[0]);
+
+      $('#p1handCard1').text(game.p1hand[0]);
+      $('#p1handCard2').text(game.p1hand[1]);
+      $('#p2handCard1').text(game.p2hand[0]);
+      $('#p2handCard2').text(game.p2hand[1]);
+
+      function giveSuitTo(span) {
+
+        $(span).each(function() {
+            var $this = $(this),
+            html = $this.html();
+            if (html.indexOf("img") === -1) {html = html.replace(/c/g, '<img src="images/club.jpg" alt="c" height = "15" >')};
+            if (html.indexOf("img") === -1) {html = html.replace(/h/g, '<img src="images/heart.jpg" alt="h" height = "15" >')};
+            if (html.indexOf("img") === -1) {html = html.replace(/d/g, '<img src="images/diamond.jpg" alt="d" height = "15" >')};
+            if (html.indexOf("img") === -1) {html = html.replace(/s/g, '<img src="images/spade.jpg" alt="s" height = "15" >')};
+            $this.html(html);
+        });
+      }
+
+      giveSuitTo('.card');
+
+
+
       $('#dealFlop').on('click', function() {
-        $('#flop').text(game.flop.join('  '))
+        $('#flop1').text(game.flop[0])
+        $('#flop2').text(game.flop[1])
+        $('#flop3').text(game.flop[2])
+        giveSuitTo('.card');
       });
       $('#dealTurn').on('click', function() {
         $('#turn').text(game.turn.join('  '))
+        giveSuitTo('.card');
       });
       $('#dealRiver').on('click', function() {
         $('#river').text(game.river.join('  '))
+        giveSuitTo('.card');
         $('#winner').text("PLAYER " + game.winner.join(' ') + " WINS")
       });
 
