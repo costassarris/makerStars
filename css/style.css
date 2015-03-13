@@ -18,9 +18,13 @@ a {
   margin: 5px;
 }
 
+.name {
+  color: white;
+}
+
 .card {
   display: inline-block;
-  font-size: 30px;
+  font-size: 40px;
   background-color: white;
   padding: 30px 10px;
   margin: 5px;
