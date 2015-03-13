@@ -8,13 +8,18 @@
   </head>
 
   <body>
-    <div id = "game">
+    <img src="images/makerstars.png" align = "middle" height = "80">
+    <div id = "players">
       <div id = "player1">
-        <span class = "name">PLAYER 1: </span><span class = "card" id = "p1handCard1"></span><span class = "card" id = "p1handCard2"></span>
+        <span class = "card" id = "p1handCard1"></span><span class = "card" id = "p1handCard2"></span>
+        <div class = "name">PLAYER 1</div>
       </div>
       <div id = "player2">
-        <span class = "name">PLAYER 2: </span><span class = "card" id = "p2handCard1"></span><span class = "card" id = "p2handCard2"></span>
+        <span class = "card" id = "p2handCard1"></span><span class = "card" id = "p2handCard2"></span>
+        <div class = "name">PLAYER 2</div>
       </div>
+    </div>
+    <div id = "board">
       <br>
       <span class = "card" id = "flop1"></span>
       <span class = "card" id = "flop2"></span>
@@ -23,13 +28,9 @@
       <span class = "card" id = "river"></span>
       <br>
       <div id = "winner"></div>
+      <a href='#' id = 'deal'>DEAL</a>
+      <a href='#' id = 'newHand'>NEW HAND</a>
     </div>
-    <a href='#' id = 'deal'>DEAL</a>
-<!--     <a href='#' id = 'dealFlop'>Deal Flop</a>
-    <a href='#' id = 'dealTurn'>Deal Turn</a>
-    <a href='#' id = 'dealRiver'>Deal River</a>
-    <br> -->
-    <a href='#' id = 'newHand'>NEW HAND</a>
   </body>
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>

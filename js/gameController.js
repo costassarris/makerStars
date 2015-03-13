@@ -71,6 +71,7 @@ $(document).ready(function() {
 
   $('#newHand').on('click', function() {
     $('.card').text('');
+    $('#winner').text('');
     dealCounter = 1;
     getData();
   });
